@@ -1,0 +1,27 @@
+
+{
+    "region" : "eu-central-1",
+    "profile" : "default",
+    "configuration" : "Release",
+    "image-tag"     : "UserRolesAPI:latest",
+    "docker-build-working-dir" : "",
+    "cluster"                  : "UserRolesAPI",
+    "launch-type"              : "FARGATE",
+    "launch-subnets"           : "subnet-aa934bc0,subnet-0b2e3976,subnet-c00f158d",
+    "launch-security-groups"   : "sg-b94f93db",
+    "assign-public-ip"         : true,
+    "task-definition-name"     : "UserRolesAPI",
+    "task-cpu"                 : "256",
+    "task-memory"              : "512",
+    "platform-version"         : "LATEST",
+    "task-execution-role"      : "ecsTaskExecutionRole",
+    "container-name"           : "UserRolesAPI",
+    "container-port-mapping"   : "443:443,80:80",
+    "container-environment-variables" : "\"ASPNETCORE_Kestrel__Certificates__Default__Path\"=\"/https/aspnetapp.pfx\";\"ASPNETCORE_Kestrel__Certificates__Default__Password\"=\"crypticpassword\";\"ASPNETCORE_ENVIRONMENT\"=\"Development\";\"DB_DEFAULTCONNECTION\"=\"Data Source=novapago-preprod2.cgbckb9thbwk.eu-central-1.rds.amazonaws.com;uid=DRMUser;password=nEGImPy3a2SM;Initial Catalog=DRM_PRE;integrated security=False;\"",
+    "skip-image-push"                 : false,
+    "cluster-service"                 : "UserRolesAPI/UserRolesAPI",
+    "desired-count"                   : 1,
+    "deployment-minimum-healthy-percent" : 50,
+    "deployment-maximum-percent"         : 200,
+    "vstoolkit-deployment-mode"          : "DeployService"
+}
